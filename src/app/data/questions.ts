@@ -212,8 +212,223 @@ export const questions: Question[] = [
     explanation: 'Google developed Kubernetes and open-sourced it in 2014. The project was based on lessons learned from Googles internal container orchestration system, Borg, and has since become a cornerstone of the cloud- native ecosystem.',
 topic: 'cloud-native-architecture',
   difficulty: 'easy'
+  },
+  {
+    id: '16',
+    question: 'What could the term "tight coupling" refer to in the context of monolithic applications?',
+options: [
+'High impact changes are easy and frequent',
+'A User Interface and Business Logic are hard to work on separately',
+'The application and the operating system are entirely separate',
+'The application is easy to manage and maintain'
+],
+correctAnswer: 1,
+explanation: 'Tight coupling means that different components of an application, such as the User Interface (UI) and Business Logic, are closely linked and interdependent. This makes it challenging to work on them separately, as changes to one component often require changes to others, complicating development and maintenance.',
+topic: 'cloud-native-architecture',
+difficulty: 'easy'
+  },
+  {
+    id: '17',
+    question: 'What is a significant advantage of microservices in cloud-native applications?',
+options: [
+'They make the system more tightly coupled',
+'They reduce the need for automation',
+'They enhance flexibility and make the application easier to manage',
+'They eliminate the need for system updates'
+],
+correctAnswer: 2,
+explanation: 'Microservices enhance flexibility by allowing each service to be developed, deployed, and scaled independently. This modularity makes the application easier to manage, as changes or updates to one service do not impact the entire system.',
+topic: 'cloud-native-architecture',
+difficulty: 'easy'
+  },
+  {
+    id: '18',
+    question: 'What is a significant advantage of using autoscaling in Cloud Native patterns?',
+options: [
+'It permanently scales the architecture',
+'It allows the application to scale based on the workload at the time',
+'It reduces efficiency',
+'It increases cost'
+],
+correctAnswer: 1,
+explanation: 'Autoscaling enables an application to automatically adjust its resources based on real-time workload, ensuring that the application can handle varying levels of demand efficiently. This helps maintain performance and optimize resource usage without manual intervention.',
+topic: 'cloud-native-architecture',
+difficulty: 'easy'
+  },
+  {
+    id: '19',
+    question: 'What are the fundamental characteristics that define a Cloud Native Application?',
+options: [
+'Portability, Scalability, Maintainability, Cost-effectiveness',
+'Resiliency, Agility, Operability, Observability',
+'Continuous Integration, Continuous Delivery, DevOps, Microservices',
+'Interoperability, Sustainability, Autonomy, Efficiency'
+],
+correctAnswer: 1,
+explanation: 'Cloud-native applications are designed to be resilient, meaning they can withstand failures; agile, allowing for rapid development and deployment; operable, ensuring ease of management; and observable, enabling effective monitoring and troubleshooting.',
+topic: 'cloud-native-architecture',
+difficulty: 'easy'
+  },{
+    id: '20',
+    question: 'What does "Self Healing" refer to in the context of Cloud Native practices?',
+options: [
+'Always restarting a failed process manually',
+'Architecting your application to automatically resolve issues and restart processes when they fail',
+'Ensuring that all components of the system are always up and running',
+'Always ensuring that a system never fails'
+],
+correctAnswer: 1,
+explanation: 'In Cloud Native practices, self-healing refers to the ability of an application to detect failures or issues and automatically recover from them. This includes restarting failed processes, reallocating resources, or rerouting traffic to maintain availability and performance without manual intervention.',
+topic: 'cloud-native-architecture',
+difficulty: 'easy'
+  },{
+    id: '21',
+    question: 'How could Ansible facilitate Cloud Native automation?',
+options: [
+'Ansible only assists with the lifecycle of applications',
+'Ansible is only useful for creating Linux distributions',
+'Ansible is a toolset that could assist with many areas including Container and Application Lifecycles as well as infrastructure deployment',
+'Ansible is a programming language for developing Cloud Native applications'
+],
+correctAnswer: 2,
+explanation: 'Ansible is a versatile automation tool that can be used to automate various aspects of cloud-native environments, including managing container and application lifecycles, deploying infrastructure, and automating configuration tasks. It provides a consistent way to automate complex workflows across different platforms.',
+topic: 'cloud-native-architecture',
+difficulty: 'hard'
+  },
+  {
+    id: '22',
+    question: 'Which of the following is a key function of Terraform in Cloud Native Automation?',
+options: [
+'Terraform is used exclusively for version control in source version control software',
+'Terraform focuses on Infrastructure as Code (IAC), allowing for consistent, reproducible, and automated infrastructure across different environments',
+'Terraform is used to replace Ansible in automation tasks',
+'Terraform is a programming language used in Cloud Native applications'
+],
+correctAnswer: 1,
+explanation: 'Terraform is an Infrastructure as Code (IaC) tool that enables you to safely and efficiently build, change, and version infrastructure. It is cloud-agnostic and supports multiple service providers, allowing for consistent and reproducible infrastructure automation.',
+topic: 'cloud-native-architecture',
+difficulty: 'easy'
+  },{
+    id: '23',
+    question: 'What best describes the concept of Continuous Delivery in the context of CI/CD?',
+options: [
+'A practice where developers are encouraged to constantly deliver new codes',
+'The manual process of moving changes to the production environment',
+'A practice that encourages frequent development changes with an emphasis on automated testing, leading up to a releasable build',
+'The continuous automatic deployment of changes to the production environment'
+],
+correctAnswer: 2,
+explanation: 'Continuous Delivery (CD) is a practice where code changes are automatically built, tested, and prepared for release. It emphasizes automation in testing and integration, ensuring that the application is always in a releasable state, even if it is not immediately deployed to production.',
+topic: 'cloud-native-architecture',
+difficulty: 'medium'
   }
-
+,{
+  id: '24',
+  question: 'What does the term Continuous Deployment mean in the context of CI/CD?',
+options: [
+'It refers to the practice of delaying the deployment of changes until they are manually approved',
+'It refers to the practice where changes are continuously deployed and released into a Production environment, often without requiring human initiation',
+'It refers to the practice of deploying changes once a day',
+'It refers to the practice of stopping the deployment of changes to perform manual tests'
+],
+correctAnswer: 1,
+explanation: 'Continuous Deployment (CD) is the practice where code changes that pass automated testing are automatically deployed to the production environment without the need for manual intervention. It ensures rapid and frequent release of new features, bug fixes, and updates directly to users.',
+topic: 'cloud-native-architecture',
+difficulty: 'easy'
+},{
+  id: '25',
+  question: 'What is a key consideration when designing an application or infrastructure in cloud native practices?',
+options: [
+'Performance/Speed',
+'Popularity of components used',
+'How quickly it can be built',
+'Potential for component failure'
+],
+correctAnswer: 3,
+explanation: 'In cloud-native design, acknowledging and planning for potential component failure is crucial. This approach involves building systems with redundancy, self-healing capabilities, and scalability to ensure high availability and reliability, even when individual components fail.',
+topic: 'cloud-native-architecture',
+difficulty: 'easy'
+},{
+  id: '26',
+question: "Which of the following options correctly lists the key pillars of Cloud Native Architecture?",
+options: [
+"Microservices, Continuous Integration, DevOps, Containerisation",
+"Monolithic applications, Agile development, Containerisation, Self-healing",
+"Microservices, Containers, DevOps, Continuous Delivery",
+"Containers, DevOps, Continuous Integration, Cloud Native Infrastructure"
+],
+correctAnswer: 2,
+explanation: "This is the correct answer. The key pillars of Cloud Native Architecture include Microservices, Containers, DevOps, and Continuous Delivery. Microservices enable modular, independent service development; Containers provide isolated and consistent environments; DevOps practices facilitate collaboration and automation; and Continuous Delivery ensures that code changes are tested and ready for deployment at any time.",
+topic: "cloud-native-architecture",
+difficulty: "easy"
+},{
+  id: '27',
+  question: "Which Autoscaling types reacts when metrics hit a given threshold?",
+options: [
+"Predictive Autoscaling",
+"Vertical Autoscaling",
+"Reactive Autoscaling",
+"Scheduled Autoscaling"
+],
+correctAnswer: 2,
+explanation: "Reactive Autoscaling responds to real-time metrics such as CPU utilization or request rates. When these metrics cross a predefined threshold, the system automatically scales resources up or down to meet the current demand, ensuring efficient use of resources.",
+topic: "cloud-native-architecture",
+difficulty: "easy"
+},{
+  id: '28',
+ 
+question: "What is the function of Horizontal Pod Autoscalers (HPA) in Kubernetes?",
+options: [
+"They scale the number of replicas for an application",
+"They automatically adjust the size of a Kubernetes Cluster based on the workload",
+"They scale the resource requests and limits of a pod",
+"They facilitate the conversion of video formats"
+],
+correctAnswer: 0,
+explanation: "The Horizontal Pod Autoscaler (HPA) in Kubernetes automatically scales the number of replicas of a pod based on observed metrics such as CPU utilization or custom metrics. This helps ensure that the application can handle varying loads efficiently by adjusting the number of pod instances dynamically.",
+topic: "cloud-native-architecture",
+difficulty: "easy"
+},
+{
+  id: '29',
+  question: "What is Keda in the context of Autoscaling?",
+options: [
+"It is a process to add more users to a software application",
+"It is an event driven solution that makes use of ScaledObjects",
+"It is a tool to automatically adjust the size of a Kubernetes Cluster based on the workload",
+"It is a method to scale the resource requests and limits of a pod"
+],
+correctAnswer: 1,
+explanation: "Keda (Kubernetes-based Event Driven Autoscaler) is an event-driven autoscaling solution for Kubernetes. It allows applications to scale based on external event sources, such as message queues or databases, using custom resources called ScaledObjects to define scaling criteria and behaviour.",
+topic: "cloud-native-architecture",
+difficulty: "medium"
+},{
+  id: '30',
+  question: "What does provisioned concurrency in Serverless offerings refer to?",
+options: [
+"The number of instances that can be run simultaneously",
+"The number of serverless functions that can be written",
+"The number of cloud providers that can be used",
+"The number of users that can access the serverless application"
+],
+correctAnswer: 0,
+explanation: "Provisioned concurrency in serverless offerings refers to the number of instances of a serverless function that are kept warm and ready to handle requests simultaneously. It ensures that functions are pre-initialized and can serve requests with minimal latency, even under high demand.",
+topic: "cloud-native-architecture",
+difficulty: "easy"
+},{
+  id: '31',
+  question: "What is the sequence of the CNCF project maturity levels?",
+options: [
+"Graduated, Incubated, Sandbox",
+"Incubated, Graduated, Sandbox",
+"Sandbox, Graduated, Incubated",
+"Sandbox, Incubated, Graduated"
+],
+correctAnswer: 3,
+explanation: "The sequence of CNCF project maturity levels is: Sandbox, Incubated, and then Graduated. Projects begin in the Sandbox to experiment and gain community support, move to Incubation as they mature and demonstrate traction, and finally achieve Graduation when they are widely adopted and meet stability and security criteria.",
+topic: "cloud-native-architecture",
+difficulty: "easy"
+}
 
 
 ]
