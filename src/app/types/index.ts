@@ -2,7 +2,7 @@ export interface Question{
     id: string;
     question: string;
     options: string[];
-    correctAnswer: string;
+    correctAnswer: number;
     explanation: string;
     topic: KCNATopic;
     difficulty: 'easy' | 'medium' | 'hard';
@@ -31,6 +31,7 @@ export interface QuizState{
 export interface UserProgress{
     totalQuestionsAnswered: number;
     totalCorrectAnswers: number;
+    correctAnswers: number; 
     topicProgress: Record<KCNATopic, { answered: number; correct: number }>;
     bookmarkedQuestions: string[];
     lastactivity: Date;

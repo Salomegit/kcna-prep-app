@@ -28,7 +28,7 @@ export default function RootLayout({
                   </h1>
                 </div>
                 <nav className="hidden md:flex space-x-6">
-                  <a href="/" className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+                  <a href="/home" className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium">
                     Home
                   </a>
                   <a href="/practice" className="text-gray-600 hover:text-gray-900 px-3 py-2 text-sm font-medium">

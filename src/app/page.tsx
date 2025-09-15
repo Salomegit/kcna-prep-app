@@ -94,7 +94,7 @@ export default function HomePage() {
       <div className="bg-blue-50 rounded-lg p-6">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">About KCNA Certification</h2>
         <p className="text-gray-700 mb-4">
-          The Kubernetes and Cloud Native Associate (KCNA) exam demonstrates a user's foundational knowledge and skills in Kubernetes and the wider cloud native ecosystem.
+          The Kubernetes and Cloud Native Associate (KCNA) exam demonstrates a user&apos;s foundational knowledge and skills in Kubernetes and the wider cloud native ecosystem.
         </p>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-sm">
           <div>
