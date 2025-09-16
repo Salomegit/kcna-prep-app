@@ -428,6 +428,126 @@ correctAnswer: 3,
 explanation: "The sequence of CNCF project maturity levels is: Sandbox, Incubated, and then Graduated. Projects begin in the Sandbox to experiment and gain community support, move to Incubation as they mature and demonstrate traction, and finally achieve Graduation when they are widely adopted and meet stability and security criteria.",
 topic: "cloud-native-architecture",
 difficulty: "easy"
+},
+{
+  id: "32",
+question: "Why are Docker containers preferred over virtual machines?",
+options: [
+"They are faster to deploy and consume less system resources",
+"They provide stronger security features than virtual machines",
+"They offer better resource isolation compared to virtual machines",
+"They can handle larger workloads than virtual machines"
+],
+correctAnswer: 0,
+explanation: "Docker containers are preferred over virtual machines because they are faster to deploy and consume less system resources. Containers share the same kernel as the host operating system, which means that they don't require a separate operating system instance like virtual machines do. This makes them much more lightweight and efficient in terms of resource usage.",
+topic: "container-orchestration",
+difficulty: "easy"
+},
+{
+  id: "33",
+question: "What does Docker Desktop use to run an isolated instance for Docker?",
+options: [
+"A separate partition",
+"A hidden virtual machine or 'subsystem'",
+"A dedicated Docker server",
+"A container orchestrator"
+],
+correctAnswer: 1,
+explanation: "Docker Desktop uses a hidden virtual machine (VM) or 'subsystem' to run an isolated instance of Docker on Windows and macOS systems. This VM, also known as the 'Docker Desktop VM', provides a lightweight and isolated environment for running containers, without requiring the user to explicitly manage a separate VM.",
+topic: "container-orchestration",
+difficulty: "easy"
+},
+{
+  id: "34",
+question: "What is the purpose of the 'I' flag when running the 'docker run' command?",
+options: [
+"To initialise the container",
+"To make the container interactive",
+"To specify the container image",
+"To ignore any errors"
+],
+correctAnswer: 1,
+explanation: "The 'I' flag, short for '--interactive', tells Docker to keep the standard input (STDIN) open after starting the container. This allows you to interact with the container's process as if it were running on your local machine.",
+topic: "container-orchestration",
+difficulty: "easy"
+},{
+  id: "35",
+  question: "What is a container image?",
+options: [
+"A portable self-contained bundle of software and dependencies",
+"A running instance of a software",
+"A type of version control system",
+"A cloud-based storage system"
+],
+correctAnswer: 0,
+explanation: "A container image is a portable, self-contained bundle of software and dependencies that includes everything needed to run an application: code, runtime, system tools, system libraries, and settings.",
+topic: "container-orchestration",
+difficulty: "easy"
+},{
+  id: "36",
+  question: "What is a container registry?",
+options: [
+"A service for hosting and distributing container images",
+"A software for creating containers",
+"A version control system for containers",
+"A layer within a container image"
+],
+correctAnswer: 0,
+explanation: "A container registry is a service for hosting and distributing container images, allowing users to store, manage, and deploy container images efficiently.",
+topic: "container-orchestration",
+difficulty: "easy"
+},{
+  id: "37",
+  question: "What is the purpose of the 'latest' tag in Docker?",
+options: [
+"To indicate the newest version of a container image",
+"To specify the oldest version of a container image",
+"To be used as a default tag when working with images if a tag is not specified",
+"To show the base operating system of a container image"
+],
+correctAnswer: 2,
+explanation: "The 'latest' tag in Docker serves as a default tag when working with images if a specific tag is not specified. When you pull or use an image without specifying a particular tag, Docker will automatically use the image with the 'latest' tag. This simplifies the process of using and managing container images.",
+topic: "container-orchestration",
+difficulty: "easy"
+},{
+  id: "38",
+  question: "What is a digest in the context of container images?",
+options: [
+"A secure and unique identifier for an image from the container registry",
+"A tag used to distinguish a version of a container image",
+"A running instance of a container image",
+"A layer within a container image"
+],
+correctAnswer: 0,
+explanation: "In the context of container images, a digest refers to a secure and unique identifier that represents an image in a container registry. Digests are typically calculated using cryptographic hash functions (such as SHA-256), which produce a fixed-length string that uniquely identifies the contents of the image.",
+topic: "container-orchestration",
+difficulty: "easy"
+},{
+  id: "39",
+  question: "What is the command used to validate the Docker version and configuration?",
+options: [
+"docker --version",
+"docker version",
+"docker info",
+"docker config"
+],
+correctAnswer: 1,
+explanation: "The command 'docker version' provides detailed information about the Docker client and server versions, along with their configuration details. This makes it a more comprehensive option for validating both the version and configuration of Docker.",
+topic: "container-orchestration",
+difficulty: "easy"
+},{
+  id: "40",
+  question: "How can you override the default command in a Docker container when running it?",
+options: [
+"Add the command to the end of the docker run command",
+"Modify the container's Dockerfile",
+"Use the -e flag followed by the new command",
+"It is not possible to override the default command"
+],
+correctAnswer: 0,
+explanation: "When you add a command to the end of the docker run command, it overrides the default command specified in the Dockerfile. This allows you to customize the behavior of the container without modifying the original image.",
+topic: "container-orchestration",
+difficulty: "medium"
 }
 
 
