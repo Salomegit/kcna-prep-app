@@ -105,7 +105,7 @@ const Results = () => {
           </button>
           
           <div className="flex items-center gap-3">
-            <label className="flex items-center gap-2 text-sm">
+            <label className="flex items-center text-black gap-2 text-sm">
               <input
                 type="checkbox"
                 checked={showOnlyIncorrect}
@@ -130,7 +130,7 @@ const Results = () => {
               <button
                 onClick={() => setCurrentReviewIndex(Math.max(0, currentReviewIndex - 1))}
                 disabled={currentReviewIndex === 0}
-                className="px-3 py-1 text-sm border border-gray-200 rounded hover:bg-gray-50 disabled:opacity-50"
+                className="px-3 py-1 text-black text-sm border border-gray-200 rounded hover:bg-gray-50 disabled:opacity-50"
               >
                 Previous
               </button>

@@ -25,11 +25,11 @@ const Practice = () => {
 
   useEffect(() => {
     if (selectedTopics.length > 0) {
-      const filteredQuestions = Newquestions.filter(q => selectedTopics.includes(q.topic));
+      const filteredQuestions = questions.filter(q => selectedTopics.includes(q.topic));
       setQuestions(filteredQuestions);
       setCurrentIndex(0);
     } else {
-      setQuestions(Newquestions);
+      setQuestions(questions);
     }
   }, [selectedTopics]);
 
@@ -84,10 +84,10 @@ const Practice = () => {
   if (Newquestions.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-gray-600 mb-4">No questions found for the selected topics.</p>
+        <p className="text-black mb-4">No questions found for the selected topics.</p>
         <button
           onClick={clearFilters}
-          className="btn-primary"
+          className="btn-primary text-black"
         >
           Clear Filters
         </button>
@@ -102,38 +102,38 @@ const Practice = () => {
         <div className="flex items-center gap-4">
           <button
             onClick={() => router.push('/')}
-            className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+            className="flex items-center gap-2 text-black hover:text-gray-900 transition-colors"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-4 h-4 text-black" />
             Back to Home
           </button>
           <h1 className="text-2xl font-bold text-gray-900">Practice Mode</h1>
         </div>
         
         <div className="flex items-center gap-3">
-          <button
+          {/* <button
             onClick={() => setShowFilters(!showFilters)}
-            className={`flex items-center gap-2 px-3 py-2 rounded-lg border transition-colors ${
+            className={`flex items-center gap-2 px-3 py-2 rounded-lg text-black border transition-colors ${
               selectedTopics.length > 0 
                 ? 'border-blue-500 bg-blue-50 text-blue-700' 
                 : 'border-gray-200 hover:bg-gray-50'
             }`}
           >
-            <Filter className="w-4 h-4" />
+            <Filter className="w-4 h-4 text-black"  />
             Filter ({selectedTopics.length})
-          </button>
+          </button> */}
           <button
             onClick={handleRestart}
-            className="flex items-center gap-2 px-3 py-2 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
+            className="flex items-center text-black gap-2 px-3 py-2 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
           >
-            <RotateCcw className="w-4 h-4" />
+            <RotateCcw className="w-4 h-4 text-black" />
             Restart
           </button>
         </div>
       </div>
 
       {/* Topic Filters */}
-      {showFilters && (
+      {/* {showFilters && (
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
           <div className="flex flex-wrap gap-2">
             {Object.entries(TOPIC_LABELS).map(([key, label]) => (
@@ -159,13 +159,13 @@ const Practice = () => {
             )}
           </div>
         </div>
-      )}
+      )} */}
 
       {/* Progress Bar */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
         <div className="flex justify-between items-center mb-2">
-          <span className="text-sm text-gray-600">Progress</span>
-          <span className="text-sm text-gray-600">
+          <span className="text-sm text-black">Progress</span>
+          <span className="text-sm text-black">
             {currentIndex + 1} of {Newquestions.length}
           </span>
         </div>
@@ -194,9 +194,9 @@ const Practice = () => {
         <button
           onClick={handlePrevious}
           disabled={currentIndex === 0}
-          className="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          className="flex items-center text-black gap-2 px-4 py-2 rounded-lg border border-gray-200 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
         >
-          <ArrowLeft className="w-4 h-4" />
+          <ArrowLeft className="w-4 h-4 text-black" />
           Previous
         </button>
 

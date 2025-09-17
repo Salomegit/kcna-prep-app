@@ -29,7 +29,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   showCorrectAnswer = false,
 }) => {
   const getOptionClassName = (index: number) => {
-    const baseClasses = "w-full text-left p-4 rounded-lg border-2 transition-all duration-200 hover:bg-gray-50";
+    const baseClasses = "w-full text-left  p-4 rounded-lg border-2 transition-all duration-200 hover:bg-gray-50";
     
     if (showExplanation || showCorrectAnswer) {
       if (index === question.correctAnswer) {
@@ -38,14 +38,14 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
       if (selectedAnswer === index && index !== question.correctAnswer) {
         return `${baseClasses} border-red-500 bg-red-50 text-red-800`;
       }
-      return `${baseClasses} border-gray-200 text-gray-600`;
+      return `${baseClasses} border-gray-200 text-black`;
     }
     
     if (selectedAnswer === index) {
       return `${baseClasses} border-blue-500 bg-blue-50 text-blue-800`;
     }
     
-    return `${baseClasses} border-gray-200 hover:border-blue-300`;
+    return `${baseClasses} text-black border-gray-200 hover:border-blue-300`;
   };
 
   const formatTime = (seconds: number) => {
@@ -60,7 +60,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-4">
           {currentQuestionNumber && totalQuestions && (
-            <span className="text-sm text-gray-600">
+            <span className="text-sm text-black">
               Question {currentQuestionNumber} of {totalQuestions}
             </span>
           )}
@@ -82,7 +82,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
         <div className="flex items-center gap-3">
           {timeRemaining !== undefined && (
             <div className={`flex items-center gap-1 text-sm ${
-              timeRemaining < 300 ? 'text-red-600' : 'text-gray-600'
+              timeRemaining < 300 ? 'text-red-600' : 'text-black'
             }`}>
               <Clock className="w-4 h-4" />
               {formatTime(timeRemaining)}
@@ -98,7 +98,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
               {isBookmarked ? (
                 <BookmarkCheck className="w-5 h-5 text-blue-600" />
               ) : (
-                <Bookmark className="w-5 h-5 text-gray-400" />
+                <Bookmark className="w-5 h-5 text-black" />
               )}
             </button>
           )}
@@ -124,7 +124,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
                 <span className="flex-shrink-0 w-6 h-6 rounded-full border-2 border-current flex items-center justify-center text-sm font-semibold">
                   {String.fromCharCode(65 + index)}
                 </span>
-                <span className="flex-1 text-left">{option}</span>
+                <span className="flex-1 text-left text-black">{option}</span>
               </div>
             </button>
           ))}
