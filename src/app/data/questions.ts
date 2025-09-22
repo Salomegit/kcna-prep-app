@@ -548,8 +548,528 @@ correctAnswer: 0,
 explanation: "When you add a command to the end of the docker run command, it overrides the default command specified in the Dockerfile. This allows you to customize the behavior of the container without modifying the original image.",
 topic: "container-orchestration",
 difficulty: "medium"
-}
+},{
+  id: "41",
+  question: "What does the command 'docker run --rm nginx' do?",
+options: [
+"Runs an nginx container in the background",
+"Stops and removes an nginx container",
+"Pulls the nginx image if it does not exist, runs a container and removes the container upon exit",
+"Starts an interactive terminal session in an nginx container"
+],
+correctAnswer:2,
+explanation: "Pulls the nginx image if it does not exist, runs a container and removes the container upon exit. This is the correct answer because the --rm flag tells Docker to automatically remove the container when it exits. If the nginx image does not already exist locally, Docker will pull it from the registry before running the container.",
+topic: "container-orchestration",
+difficulty: "medium"
+},{
+  id: "42",
+  question: "What is the purpose of the '-d' option in the command 'docker run -d --rm -P nginx'?",
+options: [
+"Detaches the container from the terminal so it runs in the background",
+"Specifies the port to be used by the container",
+"Publishes all container ports to the host machine",
+"Removes the container after it is stopped"
+],
+correctAnswer: 0,
+explanation: "The '-d' option in the command 'docker run -d --rm -P nginx' detaches the container from the terminal, allowing it to run in the background. When a Docker container is started without this option, it will run in the foreground and any output will be printed directly to the terminal. By using the '-d' flag, you can detach the container and continue using your terminal for other tasks.",
+topic: "container-orchestration",
+difficulty: "easy"
+},{
+  id: "43",
+  question: "What is the purpose of using the '-p' option in the command 'docker run -d --rm -p 12345:80 nginx'?",
+options: [
+"Specifies the port to be used for connectivity to the container",
+"Publishes all container ports to the host machine",
+"Detaches the container from the terminal so it runs in the background",
+"Removes the container after it is stopped"
+],
+correctAnswer: 0,
+explanation: "The '-p' option in the command 'docker run -d --rm -p 12345:80 nginx' specifies the port to be used for connectivity to the container. In this case, it maps port 80 inside the container to port 12345 on the host machine. This allows external traffic to reach the container's web server (nginx) through the specified host port.",
+topic: "container-orchestration",
+difficulty: "easy"
+},{
+  id: "44",
+  question: "How do you publish all exposed ports of a container when running it with Docker?",
+options: [
+"P",
+"P",
+"E",
+"e"
+],
+correctAnswer: 0,
+explanation: "The -P flag tells Docker to publish all exposed ports of the container to the host machine. When you run a container with the -P flag, Docker will automatically map any exposed port in the container to a random available port on the host machine.",
+topic: "container-orchestration",
+difficulty: "medium"
+},{
+  id: "45",
+  question: "What is a drawback of having too many layers in a container image?",
+options: [
+"Better security",
+"Easier maintenance",
+"Potential inefficiencies in image size and build times",
+"Faster build times"
+],
+correctAnswer: 2,
+explanation: "Having too many layers in a container image can lead to potential inefficiencies in image size and build times, as each layer adds overhead and can increase the overall size and complexity of the image.",
+topic: "container-orchestration",
+difficulty: "medium"
+},{
+  id: "46",
+  question: "What is the difference between the CMD and RUN instructions in a Dockerfile?",
+options: [
+"CMD specifies the command that will be executed when the container runs, while RUN executes commands during the build process",
+"CMD executes commands during the build process, while RUN specifies the command that will be executed when the container runs",
+"CMD and RUN both execute commands during the build process, but CMD has a higher priority",
+"CMD and RUN both specify the command that will be executed when the container runs, but RUN has a higher priority"
+],
+correctAnswer: 0,
+explanation: "The primary difference between the CMD and RUN instructions in a Dockerfile lies in their purpose and timing of execution. The CMD instruction specifies the default command that will be executed when the container starts running, whereas the RUN instruction executes commands during the Docker image build process.",
+topic: "container-orchestration",
+difficulty: "easy"
+},{
+  id: "47",
+  question: "In a multistage Dockerfile, how can you copy a binary from one stage to another?",
+options: [
+"By using the COPY directive with the --from flag",
+"By using the ADD directive",
+"By using the RUN directive with cp command",
+"By using the ENV directive"
+],
+correctAnswer: 0,
+explanation: "In a multistage Dockerfile, you can copy a binary from one stage to another by using the COPY directive with the --from flag. The --from flag specifies the stage from which to copy the file. For example: COPY --from=build /path/to/binary /path/to/destination. This allows you to leverage the benefits of multistage builds, such as reducing the final image size and improving security.",
+topic: "container-orchestration",
+difficulty: "easy"
+},{
+  id: "48",
+  question: "What is the function of the Logical AND operator (&&) in a Dockerfile?",
+options: [
+"To run multiple commands in parallel",
+"To run multiple commands in sequence, only if the previous command is successful",
+"To run multiple commands in a single layer, regardless of their success",
+"To check if multiple conditions are true"
+],
+correctAnswer: 1,
+explanation: "In a Dockerfile, the Logical AND operator (&&) is used to chain multiple commands together, so that they are executed only if the previous command completes successfully (i.e., exits with a zero status code). If any of the preceding commands fail, the subsequent commands will not be executed.",
+topic: "container-orchestration",
+difficulty: "easy"
+},{
+  id: "49",
 
+question: "What was the purpose of the adduser command in our Dockerfile?",
+options: [
+"To create a new user with full privileges",
+"To create a new user with reduced privileges",
+"To add an existing user to a group",
+"To change the password of an existing user"
+],
+correctAnswer: 1,
+explanation: "The adduser command in our Dockerfile was used to create a new user with reduced privileges. By creating a non-root user, we can avoid running our application with root privileges, which reduces the attack surface and improves security. Additionally, using a non-root user helps prevent accidental modifications to system files.",
+topic: "container-orchestration",
+difficulty: "easy"},{
+  id: "50",
+  question: "What is the primary function of Container Orchestration?",
+options: [
+"Web development",
+"Supporting the operational needs in running containers",
+"Data storage and backup",
+"Enhancing graphics for applications"
+],
+correctAnswer: 1,
+explanation: "Container Orchestration is primarily responsible for supporting the operational needs in running containers, such as deployment, scaling, networking, and management of containerized applications.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: "51",
+  question: "Which of these is a means of expanding Kubernetes to have functionality outside of core functionality?",
+options: [
+"Docker Swarm",
+"OpenShift",
+"CRDs",
+"Kubernetes Core"
+],
+correctAnswer: 2,
+explanation: "CRDs (Custom Resource Definitions) are a means of expanding Kubernetes to have functionality outside of its core features. CRDs allow developers to define new resources and APIs that can be used to extend the Kubernetes platform. By creating custom resources, developers can add new features and functionality to their clusters without having to modify the underlying Kubernetes codebase.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: "52",
+  question: "What is the primary benefit of Container Orchestration in the deployment of complex applications?",
+options: [
+"It allows you to bypass security protocols",
+"It standardises the deployment and integrates with components like networking, storage, security, and autoscaling",
+"It replaces the need for software developers",
+"It significantly reduces the cost of hardware infrastructure"
+],
+correctAnswer: 1,
+explanation: "The primary benefit of Container Orchestration in the deployment of complex applications is that it standardizes the deployment process and integrates with various components like networking, storage, security, and autoscaling. This enables developers to focus on writing code, rather than worrying about the underlying infrastructure.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: "53",
+  question: "In the context of Container Orchestration, what is the purpose of 'self-healing'?",
+options: [
+"Recovering hardware failures",
+"Automatically fixing or replacing containers when they fail",
+"Upgrading software versions",
+"Reducing the number of containers in use"
+],
+correctAnswer: 1,
+explanation: "The purpose of self-healing in Container Orchestration is to automatically fix or replace containers when they fail. This ensures that the application remains available and running smoothly, even if one or more containers experience issues.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+  id: "54",
+  question: "Which component is responsible for spawning and running containers in a Kubernetes architecture?",
+options: [
+"Kubelet",
+"Control-Plane",
+"Low-Level Container Runtime",
+"High-Level Container Runtime"
+],
+correctAnswer: 2,
+explanation: "The Low-Level Container Runtime (e.g. runc) is a component that’s responsible for actually running the containers in a Kubernetes architecture. It interacts with the Kubelet to manage the lifecycle of containers on each node.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+  id: "55",
+  question: "Which component is responsible for spawning and running containers in a Kubernetes architecture?",
+options: [
+"Kubelet",
+"Control-Plane",
+"Low-Level Container Runtime",
+"High-Level Container Runtime"
+],
+correctAnswer: 2,
+explanation: "The Low-Level Container Runtime (e.g. runc) is a component that’s responsible for actually running the containers in a Kubernetes architecture. It interacts with the Kubelet to manage the lifecycle of containers on each node.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+  id: "56",
+  question: "What is the role of the Kubelet in the Kubernetes architecture?",
+options: [
+"It handles leader elections and network partitions",
+"It acts as the Kubernetes component for maintaining Pods",
+"It is the main gateway for access to the Kubernetes cluster",
+"It handles the installation of Low-Level Container Runtime"
+],
+correctAnswer: 1,
+explanation: "The Kubelet acts as the primary node agent that runs on each machine in a Kubernetes cluster. Its main responsibility is to maintain the state of Pods (collections of containers) on its host machine. It communicates with the API server and other components to ensure that the desired state of the Pod is maintained.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: "57",
+  question: "What is the role of the Kube-Api Server in the Kubernetes architecture?",
+options: [
+"It is responsible for running the containers",
+"It schedules tasks according to constraints and resources",
+"It acts as the central point of the Kubernetes cluster and provides a RESTful API interface",
+"It runs as a daemon-set on every control-plane instance and every node"
+],
+correctAnswer: 2,
+explanation: "The Kube-Api Server acts as the central entry point for the Kubernetes cluster, providing a RESTful API interface to other components and external clients. It handles incoming requests, authenticates and authorizes them, and then routes them to the appropriate component for processing.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+  id: "58",
+  question: "What is the function of the Kube-Scheduler in the Kubernetes architecture?",
+options: [
+"It determines which Nodes are valid placements for Pods according to constraints and resources",
+"It is used as the source of truth and the backing store for all data",
+"It provides a RESTful API interface and stores all data",
+"It handles the installation of Low-Level Container Runtime"
+],
+correctAnswer: 0,
+explanation: "The Kube-Scheduler, also known as the Scheduler, is responsible for determining which nodes in a Kubernetes cluster are valid placements for pods based on various constraints and resource requirements. It takes into account factors such as node labels, taints, affinity, anti-affinity, and available resources when making scheduling decisions.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: "59",
+  question: "What role does the Kube-Proxy play in the Kubernetes infrastructure?",
+options: [
+"It dynamically configures TCP/UDP and SCTP Forwarding on the system that it runs",
+"It handles leader elections and network partitions",
+"It acts as the central point of the Kubernetes cluster",
+"It is the Kubernetes component for maintaining Pods"
+],
+correctAnswer: 0,
+explanation: "The Kube-Proxy, also known as the Proxy, is a network proxy that runs on each node in a Kubernetes cluster. Its primary function is to dynamically configure TCP/UDP and SCTP forwarding on the system it runs on, allowing pods to communicate with each other even if they are not running on the same host.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+  id: '60',
+question: "What is the role of the Controller-Manager in the Kubernetes architecture?",
+options: [
+"It is a control loop that monitors the state of your cluster and makes or requests changes",
+"It determines which Nodes are valid placements for Pods according to constraints and resources",
+"It provides network access and connectivity to your applications",
+"It bridges functionality of the cloud provider to the Kubernetes server"
+],
+correctAnswer: 0,
+explanation: "The Controller-Manager, also known as the controller-manager, is a component in the Kubernetes control plane that runs control loops to monitor the state of the cluster and make or request changes to achieve the desired state.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+  id: '61',
+  question: "Which component bridges functionality of the cloud provider to the Kubernetes server?",
+options: [
+"Kubelet",
+"Controller-Manager",
+"Kube-Proxy",
+"Cloud-Controller-Manager"
+],
+correctAnswer: 3,
+explanation: "The Cloud Controller Manager (CCM) bridges functionality of the cloud provider to the Kubernetes server. It acts as an interface between the Kubernetes server and the underlying cloud infrastructure, enabling features such as: Node management (creating and deleting nodes in the cloud), Persistent volumes (managing persistent storage for pods), Load balancing (creating and managing load balancers for services). The CCM provides a way to integrate cloud-specific features into Kubernetes.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+  id: '62',
+  question: "How do nodes in a highly available Kubernetes configuration connect to the API server?",
+options: [
+"They connect via the loadbalancer",
+"They connect directly to the API server",
+"They use the RAFT consensus protocol",
+"They connect via a VPN tunnel"
+],
+correctAnswer: 0,
+explanation: "In a highly available Kubernetes configuration, nodes typically connect to the API server through a load balancer. The load balancer distributes incoming traffic across multiple replicas of the API server, ensuring that the cluster remains accessible even if one or more API servers become unavailable. By using a load balancer, nodes can connect to the API server without needing to know the IP address of a specific API server instance.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: '63',
+  question: "Which command would you use to view the logs of a container that has crashed and restarted?",
+options: [
+"kubectl logs pod/<pod_name> -c <container_name> -p",
+"kubectl logs pod/<pod_name> -c <container_name>",
+"kubectl logs pod/<pod_name> -c <container_name> --tail=100",
+"kubectl describe pod/<pod_name> -c <container_name>"
+],
+correctAnswer: 0,
+explanation: "The '-p' flag (or '--previous') is used to retrieve the logs from a previous instance of the container in case it has crashed and restarted. This allows you to see the logs from the crashed container instance.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: '64',
+  question: "In Kubernetes, what is the purpose of a sidecar container in a pod?",
+options: [
+"To replicate the main container in case it fails",
+"To perform a specific task in tandem with the main container",
+"To run as a backup of the main container",
+"To monitor the performance of the main container"
+],
+correctAnswer: 1,
+explanation: "A sidecar container is a secondary container that runs alongside the main container in a pod, typically performing a specific task that complements or enhances the functionality of the main container. Examples include logging, monitoring, or proxying traffic to the main container.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+  id: '65',
+  question: "Which command is used to execute an interactive shell inside a running container in a Kubernetes pod?",
+options: [
+"kubectl shell <pod_name> -c <container_name>",
+"kubectl exec -it <pod_name> -c <container_name> -- bash",
+"kubectl exec <pod_name> -it <container_name> -- bash",
+"kubectl connect <pod_name> -c <container_name> -- bash"
+],
+correctAnswer: 1,
+explanation: "The command 'kubectl exec -it <pod_name> -c <container_name> -- bash' is used to execute an interactive shell inside a running container in a Kubernetes pod. The '-it' flags allow for an interactive terminal session.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+  id: '66',
+  question: "Which Linux namespace is the default shared in a Kubernetes Pod?",
+options: [
+"Mount",
+"User",
+"Network",
+"UTS"
+],
+correctAnswer: 2,
+explanation: "The Network namespace is the default shared namespace in a Kubernetes Pod. All containers in a pod share the same network namespace, which means they share the same IP address and port space. This allows them to communicate with each other as if they were on the same host.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: '67',
+  question: "In a Kubernetes Pod, what is used to run tasks that must complete successfully before the main application containers start?",
+options: [
+"Sidecar Containers",
+"DaemonSets",
+"Init Containers",
+"Service Containers"
+],
+correctAnswer: 2,
+explanation: "Init Containers are specialized containers in a Pod that run before the main application containers start. They are designed to perform initialization tasks, such as setting up environment variables, creating directories, or waiting for dependencies to become available. If an Init Container fails, the Pod will not start, ensuring that the main application containers only begin running once all necessary prerequisites have been met.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+  id: '68',
+  question: "How can you run a pod in a specific namespace in Kubernetes?",
+options: [
+"kubectl run pod --nsp=mynamespace",
+"kubectl run pod --n=mynamespace",
+"kubectl -n mynamespace run pod",
+"kubectl --ns=mynamespace run pod"
+],
+correctAnswer: 2,
+explanation: "To run a pod in a specific namespace in Kubernetes, you can use the kubectl command with the -n option (or --namespace) followed by the name of your namespace and then the 'run' subcommand. For example: kubectl -n mynamespace run pod. This will create and run a new pod within the specified namespace.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+  id: '69',
+  question: "What command will change the current context to use a specific namespace?",
+options: [
+"kubectl config set-context --current --namespace=mynamespace",
+"kubectl config set-context --namespace=mynamespace",
+"kubectl set-context --current --namespace=mynamespace",
+"kubectl context set --current --namespace=mynamespace"
+],
+correctAnswer: 0,
+explanation: "The command kubectl config set-context --current --namespace=mynamespace will change the current context to use a specific namespace, named 'mynamespace'. In Kubernetes, contexts determine which cluster and namespace you are interacting with when using the kubectl command-line tool. By specifying --current, you are updating the currently selected context.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+  id: '70',
+  question: "What is the function of Kubernetes Deployment?",
+options: [
+"It offers a non-declarative way to manage applications",
+"It decreases the number of Pod Replicas",
+"It provides an object that delivers declarative updates for applications",
+"It serves to manually manage Pods"
+],
+correctAnswer: 2,
+explanation: "A Kubernetes Deployment provides an object that delivers declarative updates for applications. With Deployments, you describe the desired state of your application (e.g., number of replicas, container images, ports), and the Deployment controller ensures the actual state matches this description. This approach allows for easy rolling updates, scaling, and management of stateless or stateful applications.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+  id: '71',
+  question: "What is the effect of changing the image of a Deployment?",
+options: [
+"It creates a new Deployment",
+"It removes the current ReplicaSet",
+"It creates a new ReplicaSet",
+"It has no significant effect"
+],
+correctAnswer: 2,
+explanation: "When you change the image of a Deployment, Kubernetes creates a new ReplicaSet to manage the rollout of the updated application or service. The old ReplicaSet is scaled down to zero replicas, while the new one is scaled up to the desired number of replicas. This process ensures that there's no downtime for your application and allows for a smooth transition between versions.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: '72',
+  question: "What happens when you roll back to a specific revision of a Deployment?",
+options: [
+"It erases the entire rollout history",
+"It creates a new ReplicaSet",
+"It reuses the original ReplicaSet and becomes the latest revision",
+"It results in a Deployment failure"
+],
+correctAnswer: 2,
+explanation: "When you roll back to a specific revision of a Deployment, Kubernetes reuses the original ReplicaSet and makes it the latest revision. The ReplicaSet is updated to reflect the changes from the previous revision, and the new revision becomes the current one.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: '73',
+ 
+question: "What happens when you delete a Kubernetes Deployment?",
+options: [
+"The Deployment is deleted, but the linked ReplicaSets remain",
+"The linked ReplicaSets are deleted, but the Deployment remains",
+"Both the Deployment and the linked ReplicaSets are deleted",
+"Neither the Deployment nor the linked ReplicaSets are deleted"
+],
+correctAnswer: 2,
+explanation: "When you delete a Kubernetes Deployment, both the Deployment itself and its associated ReplicaSets are deleted. This ensures that all resources related to the Deployment are removed, including any running replicas and their underlying pods.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: '74',
+  question: "Which Kubernetes service type allows services to be technically available outside of the cluster, if your nodes IP address are externally accessible?",
+options: [
+"Headless",
+"ClusterIP",
+"NodePort",
+"ExternalName"
+],
+correctAnswer: 2,
+explanation: "NodePort is a type of service in Kubernetes that allocates a port on each node's IP address, allowing external traffic to reach the service if the nodes' IP addresses are externally accessible. By doing so, services become technically available outside of the cluster, although it still depends on the specific network configuration and security policies.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+id: '75',
+question: "What is a 'Headless' service in Kubernetes?",
+options: [
+"A service that does not use any of the 4 main types of services",
+"A ClusterIP service that has no IP",
+"A service that cannot be accessed via DNS",
+"A NodePort service that does not have any nodes assigned"
+],
+correctAnswer: 1,
+explanation: "A Headless service in Kubernetes is indeed a ClusterIP service that has no IP allocated to it. By doing so, it allows direct access to Pods without going through a service's IP address. Instead, clients can use DNS or environmental variables to find and communicate with the Pods directly.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: '76',
+  question: "What do EndPoints in Kubernetes represent?",
+options: [
+"The IP addresses assigned to the nodes that the service points to",
+"The IP addresses assigned to the pods that the service points to",
+"The storage volumes assigned to the pods",
+"The routes assigned to the services in the Kubernetes cluster"
+],
+correctAnswer: 1,
+explanation: "EndPoints in Kubernetes indeed represent the IP addresses and ports assigned to the individual pods that a service points to. When a service is created, Kubernetes automatically creates an EndPoint object that contains the IP addresses and ports of the pods that match the service's selector criteria. This allows the service to forward traffic to the correct pods.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+  id: '77',
+  question: "What is the distinguishing feature of a Headless service in Kubernetes?",
+options: [
+"It exposes a service with an internal IP address",
+"It provides a DNS implementation with no proxy, so each pod handles its own traffic",
+"It provides an alias for another domain",
+"It assigns a specific port on each node to the service"
+],
+correctAnswer: 1,
+explanation: "The distinguishing feature of a Headless service in Kubernetes is indeed that it provides a DNS implementation with no proxy, so each pod handles its own traffic. By creating a Headless service, you can ensure that each pod receives its own IP address and handles incoming requests directly, without relying on a proxy or load balancer.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: '78',
+  question: "What is the purpose of the ExternalName service type in Kubernetes?",
+options: [
+"To expose a service with an internal IP address",
+"To provide a DNS implementation with no proxy",
+"To provide an alias for another domain",
+"To assign a specific port on each node to the service"
+],
+correctAnswer: 2,
+explanation: "The purpose of the ExternalName service type in Kubernetes is to provide an alias for another domain. When you create an ExternalName service, you specify a DNS name that points to an external service outside of the Kubernetes cluster. This allows you to access the external service using a consistent name within your cluster, without needing to know its actual IP address or location.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: '79',
+  question: "How would you specifically define a Headless Service in a Kubernetes YAML specification?",
+options: [
+"By setting spec.clusterIP: None in the Service YAML specification",
+"By setting spec.headless: True in the Service YAML specification",
+"By setting spec.type: Headless in the Service YAML specification",
+"By setting spec.selector: None in the Service YAML specification"
+],
+correctAnswer: 0,
+explanation: "In a Kubernetes YAML specification, a Headless Service can be defined by setting spec.clusterIP: None. This tells Kubernetes not to assign an IP address to the service and instead return the DNS entries for the pods that match the selector. By doing so, clients can then directly access the pods without going through the service's load balancer.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"  
+},{
+  id: '80',
+  question: "In terms of core abstractions provided by Kubernetes for service networking, how many types of services are primarily defined?",
+options: [
+"Three",
+"Four",
+"Five",
+"Six"
+],
+correctAnswer: 1,
+explanation: "In terms of core abstractions provided by Kubernetes for service networking, four types of services are primarily defined: ClusterIP, NodePort, LoadBalancer, and ExternalName. Each type provides a different way to expose a pod's network interface to other pods or external clients.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+}
 
 ]
 
