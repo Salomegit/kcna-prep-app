@@ -7,10 +7,31 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'KCNA Exam Prep',
-  description: 'Kubernetes and Cloud Native Associate (KCNA) exam preparation app',
-  icons: {
-    icon: '/public/kcna.png',
+title: "KCNA Exam Preparation | Practice & Quiz",
+  description:
+    "Free KCNA exam practice and quizzes to help you pass the Kubernetes and Cloud Native Associate certification. Master Kubernetes concepts with ease.",
+  keywords: [
+    "KCNA exam prep",
+    "Kubernetes exam practice",
+    "Cloud Native Associate certification",
+    "KCNA practice questions",
+    "Kubernetes certification",
+  ],
+  openGraph: {
+    title: "KCNA Exam Preparation | Practice & Quiz",
+    description:
+      "Free KCNA practice questions and quizzes for the Kubernetes and Cloud Native Associate exam.",
+    url: "https://kcna-exam-practice.vercel.app/",
+    siteName: "KCNA Exam Prep",
+    images: [
+      {
+        url: "/public/kcna.png", // create and add to /public
+        width: 1200,
+        height: 630,
+        alt: "KCNA Exam Prep",
+      },
+    ],
+    type: "website"
   },
 }
 
@@ -43,7 +64,7 @@ export default function RootLayout({
               </div>
             </div>
           </header>
-          <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             {children}
           </main>
   <Footer 

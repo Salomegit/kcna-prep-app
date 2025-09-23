@@ -9,6 +9,7 @@ export default function HomePage() {
 
   return (
     <div className="space-y-8 py-8 bg-gray-50 ">
+      
   <div className="flex flex-col lg:flex-row items-center justify-between min-h-[80vh] px-6 lg:px-12">
       
       {/* Left Content */}
