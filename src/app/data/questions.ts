@@ -1069,6 +1069,86 @@ correctAnswer: 1,
 explanation: "In terms of core abstractions provided by Kubernetes for service networking, four types of services are primarily defined: ClusterIP, NodePort, LoadBalancer, and ExternalName. Each type provides a different way to expose a pod's network interface to other pods or external clients.",
 topic: "kubernetes-fundamentals",
 difficulty: "medium"
+},{
+  id: '81',
+  question: "What is the primary function of a Job in Kubernetes?",
+options: [
+"To create a single pod and ensure it runs continuously",
+"To create one or more pods and ensure a specified number of them successfully terminate",
+"To create multiple nodes and ensure they work together in a cluster",
+"To manage the scaling of pods within a node"
+],
+correctAnswer: 1,
+explanation: "The Job resource in Kubernetes is designed for batch processing tasks that run to completion, such as data backups or report generation. A Job creates one or more Pods and ensures that a specified number of them successfully terminate, indicating the job has been completed.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: '82',
+  question: "In a Kubernetes Job, what does the parameter completions: 20 signify?",
+options: [
+"It specifies the maximum number of retries if the job fails",
+"It indicates that the job will create 20 pods overall to do the task",
+"It denotes the total number of pods running at any given point in time",
+"It refers to the total number of nodes on which the job will run"
+],
+correctAnswer: 1,
+explanation: "In a Kubernetes Job, the parameter completions: 20 signifies that the job will create up to 20 pods overall to complete the task. The Job controller will ensure that at least one pod completes successfully for the job to be considered complete.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: '83',
+  question: "What does a CronJob create according to the schedule?",
+options: [
+"Pods",
+"Services",
+"Deployments",
+"Job objects"
+],
+correctAnswer: 3,
+explanation: "A CronJob creates new Job objects according to its specified schedule. Each time a CronJob runs (e.g., every hour), it generates a new Job object that then triggers the creation of Pods to perform the actual work defined within the Job.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+
+},{
+  id: "84",
+question: "What is a significant advantage of using ConfigMaps in Kubernetes?",
+options: [
+"They provide a centralised location for configuration data on the cluster",
+"They increase the speed of pod creation",
+"They secure the cluster from external threats",
+"They automate the deployment process"
+],
+correctAnswer: 0,
+explanation: "ConfigMaps in Kubernetes provide a centralized location for storing and managing configuration data that can be used by multiple pods and containers within the cluster. This allows for easier management and updating of application configurations, as well as improved scalability and flexibility.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+  id: "85",
+    question: "What is the difference between a Secret and a ConfigMap in Kubernetes?",
+options: [
+"ConfigMaps store sensitive data while Secrets store non-sensitive data",
+"Secrets are for storing confidential information while ConfigMaps are for non-secret configuration data",
+"Secrets and ConfigMaps serve the same purpose and have no differences",
+"Secrets are used for storing an application's code while ConfigMaps are used for storing configuration data"
+],
+correctAnswer: 1,
+explanation: "In Kubernetes, Secrets are used to store confidential information such as passwords, API keys, or certificates, while ConfigMaps are used to store non-secret configuration data such as environment variables, port numbers, or other application settings. The main difference between the two is that Secrets are encrypted at rest and in transit, whereas ConfigMaps are not.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+
+},{
+  id: "86",
+  question: "What type is assigned when creating a generic secret in Kubernetes?",
+options: [
+"TypeGeneric",
+"Generic",
+"TypeSecret",
+"Opaque"
+],
+correctAnswer: 3,
+explanation: "When creating a generic secret in Kubernetes, the type assigned is indeed 'Opaque'. The term 'Opaque' signifies that the secret's contents are not specific to any particular type or format, making it a catch-all for secrets that don't fit into other predefined categories.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
 }
 
 ]

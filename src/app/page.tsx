@@ -1,35 +1,47 @@
 // src/app/page.tsx
+'use client';
 import Link from 'next/link';
 import { TOPIC_LABELS, TOPIC_COLORS } from './types';
-
+import Lottie from "lottie-react";
+import animationData from '../../public/Study discussion.json';
 export default function HomePage() {
   const topics = Object.entries(TOPIC_LABELS);
 
   return (
-    <div className="space-y-8">
-      {/* Hero Section */}
-      <div className="text-center">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">
+    <div className="space-y-8 py-8 bg-gray-50 ">
+  <div className="flex flex-col lg:flex-row items-center justify-between min-h-[80vh] px-6 lg:px-12">
+      
+      {/* Left Content */}
+      <div className="text-center lg:text-left max-w-xl">
+        <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
           KCNA Exam Preparation
         </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-          Master the Kubernetes and Cloud Native Associate certification with our comprehensive practice questions and quizzes.
+        <p className="text-lg lg:text-xl text-gray-600 mb-8">
+          Master the Kubernetes and Cloud Native Associate certification with
+          our comprehensive practice questions and quizzes.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
           <Link
             href="/practice"
-            className="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+            className="bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors shadow-md"
           >
             Start Practice
           </Link>
           <Link
             href="/quiz"
-            className="bg-white text-blue-600 px-6 py-3 rounded-lg font-medium border border-blue-600 hover:bg-blue-50 transition-colors"
+            className="bg-white text-blue-600 px-6 py-3 rounded-xl font-medium border border-blue-600 hover:bg-blue-50 transition-colors shadow-md"
           >
             Take Quiz
           </Link>
         </div>
       </div>
+
+      {/* Right Side Animation */}
+      <div className="mt-10 lg:mt-0 w-full lg:w-1/2 flex justify-center">
+        <Lottie animationData={animationData} loop={true} className="max-w-md w-full" />
+      </div>
+    </div>
 
       {/* KCNA Topics */}
       <div className="bg-white rounded-lg shadow-sm p-6">

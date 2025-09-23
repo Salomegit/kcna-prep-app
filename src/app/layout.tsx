@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'KCNA Exam Prep',
   description: 'Kubernetes and Cloud Native Associate (KCNA) exam preparation app',
+  icons: {
+    icon: '/public/kcna.png',
+  },
 }
 
 export default function RootLayout({
