@@ -7,7 +7,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-title: "KCNA Exam Preparation | Practice & Quiz",
+  title: "KCNA Exam Preparation | Practice & Quiz",
   description:
     "Free KCNA exam practice and quizzes to help you pass the Kubernetes and Cloud Native Associate certification. Master Kubernetes concepts with ease.",
   keywords: [
@@ -17,6 +17,9 @@ title: "KCNA Exam Preparation | Practice & Quiz",
     "KCNA practice questions",
     "Kubernetes certification",
   ],
+  verification: {
+    google: 'googleb41adcbf7f2c71da'
+  },
   openGraph: {
     title: "KCNA Exam Preparation | Practice & Quiz",
     description:
@@ -25,13 +28,13 @@ title: "KCNA Exam Preparation | Practice & Quiz",
     siteName: "KCNA Exam Prep",
     images: [
       {
-        url: "/public/kcna.png", // create and add to /public
+        url: "/kcna.png", // Note: removed '/public' - images in public folder are served from root
         width: 1200,
         height: 630,
         alt: "KCNA Exam Prep",
       },
     ],
-    type: "website"
+    type: "website",
   },
 }
 
