@@ -1149,7 +1149,230 @@ correctAnswer: 3,
 explanation: "When creating a generic secret in Kubernetes, the type assigned is indeed 'Opaque'. The term 'Opaque' signifies that the secret's contents are not specific to any particular type or format, making it a catch-all for secrets that don't fit into other predefined categories.",
 topic: "kubernetes-fundamentals",
 difficulty: "easy"
+},{
+  id: "87",
+  question: "How does Kubernetes use labels for resource selection?",
+options: [
+"Kubernetes labels have no role in resource selection",
+"Kubernetes uses labels to select resources for deletion",
+"Many Kubernetes components use labels to select the resources they should operate on",
+"Kubernetes uses labels to select the resources for updating Kubernetes itself"
+],
+correctAnswer: 2,
+explanation: "Many Kubernetes components use labels to select the resources they should operate on. This includes but is not limited to ReplicaSets selecting Pods for scaling, Services routing traffic to Pods based on their labels, and Deployments managing rollouts of new versions by labeling Pods with specific version numbers. Labels provide a powerful mechanism for decoupling component logic from specific resource identities.",
+topic: "container-orchestration",
+difficulty: "medium"
+},{
+  id: "88",
+  question: "What does a ClusterRole in Kubernetes define?",
+options: [
+"Permissions on resources within a namespace",
+"Permissions on resources across cluster resources",
+"The role of a cluster administrator",
+"The configurations for a Kubernetes Cluster"
+],
+correctAnswer: 1,
+explanation: "A ClusterRole in Kubernetes defines a set of permissions that can be applied to resources across the entire cluster, rather than being limited to a specific namespace. This allows for more flexible and powerful role-based access control (RBAC) configurations.",
+topic: "container-orchestration",
+difficulty: "medium"
+},{
+  id: "89",
+  question: "How are permissions assigned to a user in Kubernetes using RBAC?",
+options: [
+"Directly assigning permissions to the user",
+"Through the user's membership or group membership assigned by a ClusterRoleBinding",
+"Via the kubeconfig file",
+"By modifying the Kubernetes API server"
+],
+correctAnswer: 1,
+explanation: "In Kubernetes RBAC, permissions are assigned to users through their membership in a group or by being explicitly mentioned in a RoleBinding or ClusterRoleBinding. A ClusterRoleBinding grants the permissions defined in a ClusterRole to a user or group for all namespaces in the cluster.",
+topic: "container-orchestration",
+difficulty: "medium"
+},{
+  id: "90",
+  question: "What is the purpose of a RoleBinding in Kubernetes?",
+options: [ 
+"To bind a Role to a specific namespace",
+"To bind a ClusterRole to all namespaces",
+"To create a new Role in a namespace",  
+"To create a new ClusterRole in the cluster"
+],
+correctAnswer: 0, 
+explanation: "A RoleBinding in Kubernetes is used to bind a Role to a specific namespace, granting the permissions defined in the Role to a user or group within that namespace. This allows for fine-grained access control at the namespace level.",
+topic: "container-orchestration",
+difficulty: "medium"
+
+ 
+},{
+  id: "91",
+  question: "What is the primary function of the kube-scheduler in Kubernetes?",
+options: [
+"To manage the lifecycle of containers",
+"To schedule applications to run on various nodes",
+"To monitor the health of pods",
+"To allocate storage resources to pods"
+],
+correctAnswer: 1,
+explanation: "The primary function of the kube-scheduler is to schedule applications (in the form of pods) to run on various nodes in the Kubernetes cluster. It takes into account factors such as resource availability, node affinity, and pod priority when making scheduling decisions.",
+topic: "container-orchestration",
+difficulty: "medium"
+},{
+  id: "92",
+  question: "What happens during the 'Filtering' stage of the Kube-Scheduler's process?",
+options: [
+"It assigns the pod to the chosen node",
+"It restarts pods that have failed",
+"It finds nodes that meet the scheduling requirements",
+"It calculates the resource usage of each node"
+],
+correctAnswer: 2,
+explanation: "During the filtering stage, the Kube-Scheduler narrows down the list of available nodes by checking which ones meet the pod's resource requests, constraints (like taints, tolerations, and node selectors), and other scheduling rules. Only nodes that pass these checks move forward to the next stage.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
 }
+,{
+  id: "93",
+question: "What is the purpose of the schedulerName field in a pod's specification?",
+options: [
+"To name the pod",
+"To assign the pod to a specific namespace",
+"To specify which scheduler should dispatch the pod",
+"To define the restart policy of the pod"
+],
+correctAnswer: 2,
+explanation: "The schedulerName field in a pod's specification is used to specify which scheduler will handle the scheduling of the pod. By default, Kubernetes uses its built-in scheduler, but this field allows the use of custom schedulers.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: "94",
+  question: "Which language is most typically used for creating a custom scheduler in Kubernetes?",
+options: [
+"Python",
+"JavaScript",
+"Golang",
+"Ruby"
+],
+correctAnswer: 2,
+explanation: "Golang is the most typical language used for creating a custom scheduler in Kubernetes because of its performance, concurrency, and reliability features. Kubernetes itself is written in Golang, which makes it easier to integrate with other components and leverage existing libraries and tools.",
+topic: "kubernetes-fundamentals",
+difficulty: "easy"
+},{
+  id: "95",
+  question: "What does the nodeName field in a pod specification indicate?",
+options: [
+"The name of the pod",
+"The specific node to schedule the pod onto",
+"The name of the node where the pod is currently running",
+"The label of the node"
+],
+correctAnswer: 1,
+explanation: "The nodeName field in a pod specification indicates the specific node to schedule the pod onto. When this field is set, the Kubernetes scheduler will attempt to schedule the pod on the specified node. If the node does not exist or is not available, the pod will not be scheduled.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: "96",
+  question: "What is the role of the nodeSelector field in a pod's specification?",
+options: [
+"To automatically select the best node for the pod",
+"To define node-specific environment variables",
+"To specify labels that must match a node's labels for the pod to be scheduled on that node",
+"To create a new node for the pod"
+],
+correctAnswer: 2,
+explanation: "The nodeSelector field allows you to specify a set of labels that must be present on a node for a pod to be scheduled on that node. By using this field, you can ensure that your pods are deployed on nodes with specific characteristics, such as particular hardware configurations or network properties.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: "97",
+  question: "What is the primary characteristic of ephemeral storage in Kubernetes?",
+options: [
+"It is used for long-term data storage",
+"It persists across restarts",
+"It does not survive across restarts",
+"It is mainly used for database storage"
+],
+correctAnswer: 2,
+explanation: "Ephemeral storage in Kubernetes is designed to provide temporary storage for containers and pods. It does not survive across restarts, meaning that if a container or pod is restarted, the data stored in ephemeral storage will be lost.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: "98",
+  question: "In the context of Kubernetes, what is an example of ephemeral storage?",
+options: [
+"PersistentVolume",
+"emptyDir",
+"HostPath",
+"NFS"
+],
+correctAnswer: 1,
+explanation: "emptyDir is an example of ephemeral storage in Kubernetes. It's a type of volume that is created when a pod is created and is deleted when the pod is deleted. The data stored in an emptyDir volume is lost when the pod is terminated or restarted.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: "99",
+  question: "What does the Reclaim Policy 'Retain' imply in Kubernetes storage?",
+options: [
+"The storage is deleted immediately after the pod is deleted",
+"The storage is recycled for future use",
+"The data is kept until the volume is manually deleted",
+"The storage is available for dynamic provisioning"
+],
+correctAnswer: 2,
+explanation: "When a Persistent Volume (PV) has the Reclaim Policy set to 'Retain', it means that the data is kept until the volume is manually deleted. This allows administrators to inspect the contents of the volume after the pod using it has been deleted.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: "100",
+  question: "In Kubernetes, what is the significance of setting a volume's emptyDir.medium to Memory?",
+options: [
+"It specifies the volume is used for database storage",
+"It configures the volume as a high-performance cache area",
+"It designates the volume for long-term data storage",
+"It makes the volume available for dynamic provisioning"
+],
+correctAnswer: 1,
+explanation: "Setting emptyDir.medium to Memory configures the volume as a high-performance cache area by storing its contents in the node's RAM instead of disk storage. This allows for faster access and lower latency, making it suitable for caching or other use cases that require low-latency data access.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: "101",
+  question: "What happens to a Kubernetes PersistentVolume with a Reclaim Policy of 'Delete' after its associated PVC is deleted?",
+options: [
+"The volume is retained for future use",
+"The volume is automatically recycled",
+"The underlying storage is deleted along with the volume",
+"The volume is converted to ephemeral storage"
+],
+correctAnswer: 2,
+explanation: "When a PersistentVolume has a Reclaim Policy of 'Delete', it means that when its associated PVC (Persistent Volume Claim) is deleted, the underlying storage associated with the PersistentVolume will also be deleted. This ensures that sensitive data is properly cleaned up and not left behind.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id: "102",
+question: "How is dynamic provisioning of storage in Kubernetes different from manual provisioning?",
+options: [
+"Dynamic provisioning does not use PersistentVolumes",
+"In dynamic provisioning, volumes are created automatically when a PVC is made",
+"Dynamic provisioning is used only for ephemeral storage",
+"Manual provisioning is faster and more efficient than dynamic provisioning"
+],
+correctAnswer: 1,
+explanation: "In Kubernetes, dynamic provisioning of storage allows for the automatic creation of volumes when a Persistent Volume Claim (PVC) is made. A PVC is a request for storage resources that can be fulfilled by a PV. When a PVC is created, the Kubernetes system automatically provisions a new volume using a StorageClass if one is specified in the claim.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"
+},{
+  id:"102",
+question: "Which storage solution is known for providing comprehensive storage capabilities, including block, file, and object storage, in distributed systems?",
+options: [
+"NFS",
+"GlusterFS",
+"Ceph",
+"Local Storage"
+],
+correctAnswer: 2,
+explanation: "Ceph is a highly scalable and flexible storage solution that provides comprehensive storage capabilities, including block, file, and object storage, in distributed systems. It uses a decentralized architecture to store data across multiple nodes, making it highly fault-tolerant and reliable.",
+topic: "kubernetes-fundamentals",
+difficulty: "medium"}
 
 ]
 
